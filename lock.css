@@ -1,0 +1,32 @@
+@font-face { font-family: "Big Shoulders Display"; font-weight: 600; font-display: swap; src: url(fonts/big-shoulders-display-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "Big Shoulders Display"; font-weight: 800; font-display: swap; src: url(fonts/big-shoulders-display-latin-800-normal.woff2) format("woff2"); }
+@font-face { font-family: "Libre Franklin"; font-weight: 400; font-display: swap; src: url(fonts/libre-franklin-latin-400-normal.woff2) format("woff2"); }
+@font-face { font-family: "Libre Franklin"; font-weight: 500; font-display: swap; src: url(fonts/libre-franklin-latin-500-normal.woff2) format("woff2"); }
+@font-face { font-family: "Libre Franklin"; font-weight: 600; font-display: swap; src: url(fonts/libre-franklin-latin-600-normal.woff2) format("woff2"); }
+@font-face { font-family: "Libre Franklin"; font-weight: 700; font-display: swap; src: url(fonts/libre-franklin-latin-700-normal.woff2) format("woff2"); }
+@font-face { font-family: "JetBrains Mono"; font-weight: 500; font-display: swap; src: url(fonts/jetbrains-mono-latin-500-normal.woff2) format("woff2"); }
+
+:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+  --l-bg: #F2F4EF; --l-surface: #FFFFFF; --l-ink: #15241D; --l-muted: #5B6B62; --l-line: #D9DFD7; --l-copper: #A95A22; --l-red: #A93A2E; }
+@media (prefers-color-scheme: dark) { :root { --l-bg: #0F1814; --l-surface: #17231D; --l-ink: #E7ECE6; --l-muted: #9AAAA1; --l-line: #2A3A32; --l-copper: #E3925A; --l-red: #F08A7C; color-scheme: dark; } }
+html, body { height: 100%; }
+body { margin: 0; background: var(--l-bg); color: var(--l-ink); font: 15px/1.5 "Libre Franklin", "Helvetica Neue", Arial, sans-serif; }
+img { max-width: 100%; }
+[hidden] { display: none !important; }
+
+#lock { min-height: 100%; display: grid; place-items: center; box-sizing: border-box;
+  padding-block: 32px; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+#lock form { width: 100%; max-width: 360px; display: flex; flex-direction: column; gap: 14px; }
+#lock img { width: 72px; height: 72px; border-radius: 18px; }
+#lock h1 { font: 800 2.6rem/1 "Big Shoulders Display", "Arial Narrow", sans-serif; text-transform: uppercase; margin: 0; }
+#lock p { margin: 0; color: var(--l-muted); }
+#lock label { font-size: .72rem; font-weight: 700; letter-spacing: .14em; text-transform: uppercase; color: var(--l-muted); }
+#lock input[type="password"], #lock input[type="text"] { width: 100%; box-sizing: border-box; padding: 14px; border-radius: 10px; border: 1px solid var(--l-line);
+  background: var(--l-surface); color: var(--l-ink); font: 500 1.2rem "JetBrains Mono", ui-monospace, monospace; letter-spacing: .12em; }
+#lock .check { display: flex; gap: 8px; align-items: center; font-size: .9rem; text-transform: none; letter-spacing: 0; font-weight: 500; color: var(--l-ink); }
+#lock button { border: 0; border-radius: 10px; padding: 14px; font: 700 1rem "Libre Franklin", Arial, sans-serif; background: var(--l-copper); color: #fff; cursor: pointer; }
+#lock button:disabled { opacity: .6; cursor: progress; }
+#lock :focus-visible { outline: 2px solid var(--l-copper); outline-offset: 2px; }
+#msg { min-height: 1.5em; font-size: .9rem; color: var(--l-muted); }
+#msg.bad { color: var(--l-red); }
+@media (prefers-color-scheme: dark) { #lock button { color: #1A0F08; } }
