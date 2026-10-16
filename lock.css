@@ -30,3 +30,4 @@ img { max-width: 100%; }
 #msg { min-height: 1.5em; font-size: .9rem; color: var(--l-muted); }
 #msg.bad { color: var(--l-red); }
 @media (prefers-color-scheme: dark) { #lock button { color: #1A0F08; } }
+#lock .ver { color: var(--l-muted); font-size: .72rem; font-family: "JetBrains Mono", ui-monospace, monospace; }
