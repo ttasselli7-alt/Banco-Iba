@@ -30,17 +30,12 @@
   }
   function mount(app) {
     // Il contenuto è autenticato da AES-GCM: se fosse stato alterato, la decifratura avrebbe fallito.
-    const css = document.createElement("link");
-    css.rel = "stylesheet";
-    css.href = URL.createObjectURL(new Blob([app.css], { type: "text/css" }));
-    css.onload = () => {
-      $("lock").remove();
-      document.body.insertAdjacentHTML("beforeend", app.html);
-      const js = document.createElement("script");
-      js.src = URL.createObjectURL(new Blob([app.js], { type: "text/javascript" }));
-      document.body.appendChild(js);
-    };
-    document.head.appendChild(css);
+    // Lo stile dell'app è in app.css (file normale, carica ovunque); qui arrivano solo markup e script.
+    $("lock").remove();
+    document.body.insertAdjacentHTML("beforeend", app.html);
+    const js = document.createElement("script");
+    js.src = URL.createObjectURL(new Blob([app.js], { type: "text/javascript" }));
+    document.body.appendChild(js);
   }
   function say(text, bad) { const m = $("msg"); m.textContent = text; m.classList.toggle("bad", !!bad); }
   const wait = ms => new Promise(r => setTimeout(r, ms));

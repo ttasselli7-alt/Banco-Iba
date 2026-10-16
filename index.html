@@ -2,7 +2,7 @@
 <html lang="it">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' blob:; style-src 'self' blob:; font-src 'self'; img-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' blob:; style-src 'self'; font-src 'self'; img-src 'self'; connect-src 'self'; manifest-src 'self'; worker-src 'self'; base-uri 'none'; form-action 'none'; object-src 'none'">
 <meta name="referrer" content="no-referrer">
 <meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -15,6 +15,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
 <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="stylesheet" href="app.css">
 <link rel="stylesheet" href="lock.css">
 <script src="lock.js" defer></script>
 </head>
@@ -25,7 +26,7 @@
     <h1>Banco IBA</h1>
     <p>Inserisci il codice di accesso per aprire l'app.</p>
     <label for="code">Codice di accesso</label>
-    <input id="code" type="password" inputmode="text" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="xxxx-xxxx" autofocus>
+    <input id="code" type="password" inputmode="text" autocapitalize="off" autocorrect="off" spellcheck="false" placeholder="Il tuo codice" autofocus>
     <label class="check"><input id="show" type="checkbox"> Mostra il codice</label>
     <label class="check"><input id="remember" type="checkbox" checked> Ricorda su questo dispositivo</label>
     <button id="go" type="submit">Entra</button>
