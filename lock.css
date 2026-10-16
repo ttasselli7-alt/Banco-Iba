@@ -6,9 +6,9 @@
 @font-face { font-family: "Libre Franklin"; font-weight: 700; font-display: swap; src: url(fonts/libre-franklin-latin-700-normal.woff2) format("woff2"); }
 @font-face { font-family: "JetBrains Mono"; font-weight: 500; font-display: swap; src: url(fonts/jetbrains-mono-latin-500-normal.woff2) format("woff2"); }
 
-:root { color-scheme: light; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
-  --l-bg: #F2F4EF; --l-surface: #FFFFFF; --l-ink: #15241D; --l-muted: #5B6B62; --l-line: #D9DFD7; --l-copper: #A95A22; --l-red: #A93A2E; }
-@media (prefers-color-scheme: dark) { :root { --l-bg: #0F1814; --l-surface: #17231D; --l-ink: #E7ECE6; --l-muted: #9AAAA1; --l-line: #2A3A32; --l-copper: #E3925A; --l-red: #F08A7C; color-scheme: dark; } }
+:root { color-scheme: dark; padding-top: env(safe-area-inset-top, 0px); padding-bottom: env(safe-area-inset-bottom, 0px);
+  /* sempre verde bottiglia, qualunque sia il tema del telefono */
+  --l-bg: #0F1814; --l-surface: #17231D; --l-ink: #E7ECE6; --l-muted: #9AAAA1; --l-line: #2A3A32; --l-copper: #E3925A; --l-red: #F08A7C; }
 html, body { height: 100%; }
 body { margin: 0; background: var(--l-bg); color: var(--l-ink); font: 15px/1.5 "Libre Franklin", "Helvetica Neue", Arial, sans-serif; }
 img { max-width: 100%; }
@@ -29,5 +29,6 @@ img { max-width: 100%; }
 #lock :focus-visible { outline: 2px solid var(--l-copper); outline-offset: 2px; }
 #msg { min-height: 1.5em; font-size: .9rem; color: var(--l-muted); }
 #msg.bad { color: var(--l-red); }
-@media (prefers-color-scheme: dark) { #lock button { color: #1A0F08; } }
+#lock button { color: #1A0F08; }
 #lock .ver { color: var(--l-muted); font-size: .72rem; font-family: "JetBrains Mono", ui-monospace, monospace; }
+#lock input::placeholder { letter-spacing: 0; font: 400 1rem "Libre Franklin", Arial, sans-serif; color: var(--l-muted); }
